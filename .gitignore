@@ -1,2 +1,6 @@
 linux
 .vscode
+*.zip
+.DS_Store
+*.tar.gz
+lab1_*
