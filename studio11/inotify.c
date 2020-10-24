@@ -11,8 +11,10 @@ int
 main(int argc, char *argv[])
 {
     int inotifyfd, wd;
+    int wds[256];
+    char path[256];
     char buf[BUF_LEN] __attribute__((aligned(__alignof__(struct inotify_event))));
-    ssize_t len, i;
+    ssize_t len, i, j;
 
     if ( argc != num_expected_args )
     {
@@ -36,6 +38,7 @@ main(int argc, char *argv[])
     }
     printf("Adding a watch successfully. The file descriptor is %d, and the command line argument is %s.\n", wd, argv[1]);
 
+    /* Q5
     wd = inotify_add_watch(inotifyfd, argv[1], IN_MOVE);
     if ( wd == -1 )
     {
@@ -43,6 +46,8 @@ main(int argc, char *argv[])
         return -1;
     }
     printf("Adding a watch for moving successfully. The file descriptor is %d, and the command line argument is %s.\n", wd, argv[1]);
+    */
+    j = 0;
 
     while (1)
     {
@@ -74,15 +79,27 @@ main(int argc, char *argv[])
                 printf("File was move away from the watched directory.\n");
             if (event->mask & IN_MOVED_TO)
                 printf("File was move into the watched directory.\n");
-            if (event->mask & IN_CREATE)
-                printf("File/directory created in watched directory\n");
             if (event->mask & IN_DELETE)
                 printf("File or directory deleted from watched directory.\n");
             if (event->mask & IN_DELETE_SELF)
                 printf("Watched file or directory was itself deleted.\n");
             if (event->mask & IN_MOVE_SELF)
                 printf("Watched file or directory was itself moved.\n");
-
+            if (event->mask & IN_CREATE)
+            {
+                printf("File/directory created in watched directory\n");
+                current_dir = watch.get(event->wd);
+                wd = inotify_add_watch(inotifyfd, strcat(strcpy(path, "./"), event->name), IN_ALL_EVENTS);
+                if ( wd == -1 )
+                {
+                    printf("Error: inotify_add_watch fail. The path is %s\n", path);
+                    return -1;
+                }
+                printf("Adding a watch successfully. The file descriptor is %d, and the path is %s.\n", wd, path);
+                if (j > 255) return 0;
+                wds[j++] = wd;
+            }
+                
             i += sizeof(struct inotify_event) + event->len;
         }
         
