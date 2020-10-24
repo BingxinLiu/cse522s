@@ -36,6 +36,14 @@ main(int argc, char *argv[])
     }
     printf("Adding a watch successfully. The file descriptor is %d, and the command line argument is %s.\n", wd, argv[1]);
 
+    wd = inotify_add_watch(inotifyfd, argv[1], IN_MOVE);
+    if ( wd == -1 )
+    {
+        printf("Error: inotify_add_watch IN_MOVE fail.\n");
+        return -1;
+    }
+    printf("Adding a watch for moving successfully. The file descriptor is %d, and the command line argument is %s.\n", wd, argv[1]);
+
     while (1)
     {
         i = 0;
