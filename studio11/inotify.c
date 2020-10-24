@@ -88,8 +88,7 @@ main(int argc, char *argv[])
             if (event->mask & IN_CREATE)
             {
                 printf("File/directory created in watched directory\n");
-                current_dir = watch.get(event->wd);
-                wd = inotify_add_watch(inotifyfd, strcat(strcpy(path, "./"), event->name), IN_ALL_EVENTS);
+                wd = inotify_add_watch(inotifyfd, strcat(strcat(strcpy(path, argv[1]), "/"), event->name), IN_ALL_EVENTS);
                 if ( wd == -1 )
                 {
                     printf("Error: inotify_add_watch fail. The path is %s\n", path);
