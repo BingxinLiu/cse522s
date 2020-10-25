@@ -9,13 +9,50 @@
 #define BUF_LEN 1024
 #define LIST_LEN 1024
 
+int original_pid = 0;
+
+void
+printChain(int pid)
+{
+    FILE *file = NULL;
+    char buf[BUF_LEN];
+    char tmp[10];
+    int ppid;
+
+    if (pid == original_pid)
+    {
+        printf("%d\n", pid);
+        return;
+    }
+
+    printf("%d->", pid);
+
+    sprintf(buf, "/proc/%d/status", pid);
+    file = fopen(buf, "r");
+    if (file) {
+        fgets(buf, sizeof(buf), file);
+        fgets(buf, sizeof(buf), file);
+        fgets(buf, sizeof(buf), file);
+        fgets(buf, sizeof(buf), file);
+        fgets(buf, sizeof(buf), file);
+        fgets(buf, sizeof(buf), file);
+        fgets(buf, sizeof(buf), file);
+        sscanf(buf, "%s %d", tmp, &ppid);
+        fclose(file);
+        printChain(ppid);
+    }
+
+    return;
+
+}
+
 int
 main(int argc, char *argv[])
 {
     int * old_list;
     int * new_list;
     int old_list_len, new_list_len;
-    bool create, delete;
+    bool create, delete, first;
 
     DIR *dir = NULL;
     struct dirent *de = NULL;
@@ -30,6 +67,7 @@ main(int argc, char *argv[])
     }
 
     i = 0;
+    first = true;
     old_list = (int *) malloc(sizeof(int) * LIST_LEN);
     while ( (de = readdir(dir)) )
     {
@@ -66,7 +104,16 @@ main(int argc, char *argv[])
             {
                 if (new_list[j] == old_list[k]) create = false;
             }
-            if (create) printf("Process(pid = %d) has been created.\n", new_list[j]);
+            if (create)
+            {
+                if (first)
+                {
+                    first = false;
+                    original_pid = new_list[j];
+                }
+                printf("Process(pid = %d) has been created.\n", new_list[j]);
+                printChain(new_list[j]);
+            }
         }
 
         for (j = 0; j < old_list_len; ++j)
