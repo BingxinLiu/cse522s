@@ -39,18 +39,19 @@ main(int argc, char * argv[])
     }
 
     mm_size = atoi(argv[1]);
-    printf("========= Before malloc ==========\n");
-    display_mallinfo();
-    printf("=============== end ==============\n");
+    //printf("========= Before malloc ==========\n");
+    //display_mallinfo();
+    //printf("=============== end ==============\n");
 
     mm_ptr = malloc(mm_size * 1024);
-    printf("========== After malloc ==========\n");
-    display_mallinfo();
-    printf("=============== end ==============\n");
+    //printf("========== After malloc ==========\n");
+    //display_mallinfo();
+    //printf("=============== end ==============\n");
     free(mm_ptr);
-    printf("=========== After free ===========\n");
-    display_mallinfo();
-    printf("=============== end ==============\n");
+    free(mm_ptr);
+    //printf("=========== After free ===========\n");
+    //display_mallinfo();
+    //printf("=============== end ==============\n");
 
     exit(EXIT_SUCCESS);
 }

@@ -7,11 +7,17 @@
 
 const int num_expected_args = 2;
 
+typedef struct map_wd_path_t
+{
+    int wd;
+    char path[BUF_LEN];
+} map_wd_path;
+
 int
 main(int argc, char *argv[])
 {
     int inotifyfd, wd;
-    int wds[256];
+    map_wd_path wds[256];
     char path[256];
     char buf[BUF_LEN] __attribute__((aligned(__alignof__(struct inotify_event))));
     ssize_t len, i, j;
@@ -37,6 +43,8 @@ main(int argc, char *argv[])
         return -1;
     }
     printf("Adding a watch successfully. The file descriptor is %d, and the command line argument is %s.\n", wd, argv[1]);
+    wds[wd].wd = wd;
+    strcpy(wds[wd].path, argv[1]);
 
     /* Q5
     wd = inotify_add_watch(inotifyfd, argv[1], IN_MOVE);
@@ -88,15 +96,21 @@ main(int argc, char *argv[])
             if (event->mask & IN_CREATE)
             {
                 printf("File/directory created in watched directory\n");
-                wd = inotify_add_watch(inotifyfd, strcat(strcat(strcpy(path, argv[1]), "/"), event->name), IN_ALL_EVENTS);
+                wd = inotify_add_watch(inotifyfd, strcat(strcat(strcpy(path, wds[event->wd].path), "/"), event->name), IN_ALL_EVENTS);
+                if ( wd > 256)
+                {
+                    printf("Error: wds is full.\n");
+                    return 0;
+                }
                 if ( wd == -1 )
                 {
                     printf("Error: inotify_add_watch fail. The path is %s\n", path);
                     return -1;
                 }
                 printf("Adding a watch successfully. The file descriptor is %d, and the path is %s.\n", wd, path);
-                if (j > 255) return 0;
-                wds[j++] = wd;
+                wds[wd].wd = wd;
+                strcpy(wds[wd].path, path);
+                
             }
                 
             i += sizeof(struct inotify_event) + event->len;
