@@ -1,0 +1,39 @@
+#include "shared_memory.h"
+
+int
+main(int argc, char const *argv[])
+{
+    int shm_fd, i;
+    datatype * ptr;
+    int array[SHARED_MEM_SIZE];
+
+    
+    shm_fd = shm_open(SHM_NAME, O_RDWR, S_IRWXU);
+    if (shm_fd == -1)
+    {
+        printf("Error: fail to open shm.");
+        exit(-1);
+    }
+
+    ptr = mmap(NULL, sizeof(datatype), \
+                PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
+    if (ptr == MAP_FAILED)
+    {
+        printf("Error: fail to mmap.");
+        exit(-1);
+    }
+
+    if (memcpy((void *)array, (void *) ptr->data, sizeof(array)) == NULL)
+    {
+        printf("Error: fail to memcpy");
+        exit(-1);
+    }
+
+    for (i = 0; i < SHARED_MEM_SIZE; ++i)
+    {
+        printf("array[%d] = %d\n", i, array[i]);
+    }
+
+    return 0;
+}
+

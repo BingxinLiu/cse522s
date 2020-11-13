@@ -34,7 +34,7 @@ setup(int number, atomic_t * ptr_to_atomic)
 }
 
 static void
-wait()
+wait(void)
 {
     atomic_sub_return(1, &counter);
     while(1)
@@ -142,7 +142,7 @@ timing_exit(void)
     array[0] = aTimestamps.ts_array[0];
     for (i = 0; i < 4; i++)
     {
-        if (ktime_after(aTimestamps.ts_array[i * 2]), array[0])
+        if (ktime_after(aTimestamps.ts_array[i * 2], array[0]))
             array[0] = aTimestamps.ts_array[i * 2];
     }
     for (i = 0; i < 4; i++)

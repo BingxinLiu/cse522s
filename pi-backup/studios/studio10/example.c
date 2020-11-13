@@ -7,7 +7,7 @@ main(int argc, char *argv[])
 {
     char *p;
 
-    if (argc > 1) {
+   if (argc > 1) {
         if (mallopt(M_CHECK_ACTION, atoi(argv[1])) != 1) {
             fprintf(stderr, "mallopt() failed");
             exit(EXIT_FAILURE);
@@ -21,7 +21,10 @@ main(int argc, char *argv[])
     }
 
    free(p);
+    printf("main(): returned from first free() call\n");
+
    free(p);
+    printf("main(): returned from second free() call\n");
 
    exit(EXIT_SUCCESS);
 }
