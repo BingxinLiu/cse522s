@@ -1,0 +1,118 @@
+[19223.004016] Loaded module in run mode
+[19223.106782] RELEASE: task 1, subtask 0, ts 19223021
+[19223.106786] RELEASE: task 3, subtask 0, ts 19223021
+[19223.106790] RELEASE: task 2, subtask 0, ts 19223021
+[19223.964110] MISSED DDL: task 3, subtask 0
+[19223.964147] RELEASE: task 0, subtask 0, ts 19223879
+[19223.964152] RELEASE: task 3, subtask 1, ts 19223879
+[19224.106793] RELEASE: task 1, subtask 0, ts 19224021
+[19224.106805] RELEASE: task 2, subtask 0, ts 19224021
+[19224.404536] RELEASE: task 4, subtask 0, ts 19224319
+[19224.964170] RELEASE: task 0, subtask 0, ts 19224879
+[19225.017188] MISSED DDL: task 3, subtask 1
+[19225.017221] RELEASE: task 3, subtask 2, ts 19224932
+[19225.106790] RELEASE: task 3, subtask 0, ts 19225021
+[19225.106806] RELEASE: task 1, subtask 0, ts 19225021
+[19225.106816] RELEASE: task 2, subtask 0, ts 19225021
+[19225.964175] RELEASE: task 3, subtask 1, ts 19225879
+[19226.003498] MISSED DDL: task 0, subtask 0
+[19226.003550] RELEASE: task 0, subtask 0, ts 19225918
+[19226.106824] RELEASE: task 1, subtask 0, ts 19226021
+[19226.106834] RELEASE: task 2, subtask 0, ts 19226021
+[19227.003574] RELEASE: task 0, subtask 0, ts 19226918
+[19227.017258] MISSED DDL: task 3, subtask 1
+[19227.017292] RELEASE: task 3, subtask 2, ts 19226932
+[19227.106807] RELEASE: task 3, subtask 0, ts 19227021
+[19227.106837] RELEASE: task 1, subtask 0, ts 19227021
+[19227.106847] RELEASE: task 2, subtask 0, ts 19227021
+[19227.964196] RELEASE: task 3, subtask 1, ts 19227879
+[19228.043052] MISSED DDL: task 0, subtask 0
+[19228.043094] RELEASE: task 0, subtask 0, ts 19227958
+[19228.106854] RELEASE: task 1, subtask 0, ts 19228021
+[19228.106866] RELEASE: task 2, subtask 0, ts 19228021
+[19229.016916] MISSED DDL: task 3, subtask 1
+[19229.017312] RELEASE: task 3, subtask 2, ts 19228932
+[19229.043110] RELEASE: task 0, subtask 0, ts 19228958
+[19229.106818] RELEASE: task 3, subtask 0, ts 19229021
+[19229.106868] RELEASE: task 1, subtask 0, ts 19229021
+[19229.106877] RELEASE: task 2, subtask 0, ts 19229021
+[19229.964217] RELEASE: task 3, subtask 1, ts 19229879
+[19230.084082] MISSED DDL: task 0, subtask 0
+[19230.084110] RELEASE: task 0, subtask 0, ts 19229999
+[19230.106886] RELEASE: task 1, subtask 0, ts 19230021
+[19230.106898] RELEASE: task 2, subtask 0, ts 19230021
+[19230.568431] MISSED DDL: task 4, subtask 0
+[19231.017292] MISSED DDL: task 3, subtask 1
+[19231.017321] RELEASE: task 4, subtask 1, ts 19230932
+[19231.017334] RELEASE: task 3, subtask 2, ts 19230932
+[19231.084136] RELEASE: task 0, subtask 0, ts 19230999
+[19231.106833] RELEASE: task 3, subtask 0, ts 19231021
+[19231.106898] RELEASE: task 1, subtask 0, ts 19231021
+[19231.106909] RELEASE: task 2, subtask 0, ts 19231021
+[19231.870186] MISSED DDL: task 4, subtask 1
+[19231.964234] RELEASE: task 3, subtask 1, ts 19231879
+[19232.051732] RELEASE: task 4, subtask 2, ts 19231966
+[19232.106916] RELEASE: task 1, subtask 0, ts 19232021
+[19232.106922] RELEASE: task 2, subtask 0, ts 19232021
+[19232.123473] MISSED DDL: task 0, subtask 0
+[19232.123512] RELEASE: task 0, subtask 0, ts 19232038
+[19232.919100] MISSED DDL: task 4, subtask 2
+[19233.031621] MISSED DDL: task 3, subtask 1
+[19233.031655] RELEASE: task 3, subtask 2, ts 19232946
+[19233.106857] RELEASE: task 3, subtask 0, ts 19233021
+[19233.106929] RELEASE: task 1, subtask 0, ts 19233021
+[19233.106935] RELEASE: task 2, subtask 0, ts 19233021
+[19233.706847] RELEASE: task 0, subtask 0, ts 19233621
+[19233.964258] RELEASE: task 3, subtask 1, ts 19233879
+[19234.106951] RELEASE: task 1, subtask 0, ts 19234021
+[19234.106957] RELEASE: task 2, subtask 0, ts 19234021
+[19234.706870] RELEASE: task 0, subtask 0, ts 19234621
+[19235.031685] MISSED DDL: task 3, subtask 1
+[19235.031719] RELEASE: task 3, subtask 2, ts 19234946
+[19235.106875] RELEASE: task 3, subtask 0, ts 19235021
+[19235.106964] RELEASE: task 1, subtask 0, ts 19235021
+[19235.106966] RELEASE: task 2, subtask 0, ts 19235021
+[19235.746492] MISSED DDL: task 0, subtask 0
+[19235.746543] RELEASE: task 0, subtask 0, ts 19235661
+[19235.964276] RELEASE: task 3, subtask 1, ts 19235879
+[19236.106984] RELEASE: task 1, subtask 0, ts 19236021
+[19236.106987] RELEASE: task 2, subtask 0, ts 19236021
+[19236.746575] RELEASE: task 0, subtask 0, ts 19236661
+[19237.075581] MISSED DDL: task 3, subtask 1
+[19237.075613] RELEASE: task 3, subtask 2, ts 19236990
+[19237.106890] RELEASE: task 3, subtask 0, ts 19237021
+[19237.106997] RELEASE: task 2, subtask 0, ts 19237021
+[19237.106999] RELEASE: task 1, subtask 0, ts 19237021
+[19237.843980] MISSED DDL: task 0, subtask 0
+[19237.844019] RELEASE: task 0, subtask 0, ts 19237758
+[19237.964301] RELEASE: task 3, subtask 1, ts 19237879
+[19238.107016] RELEASE: task 2, subtask 0, ts 19238021
+[19238.107019] RELEASE: task 1, subtask 0, ts 19238021
+[19238.844053] RELEASE: task 0, subtask 0, ts 19238758
+[19239.089623] MISSED DDL: task 3, subtask 1
+[19239.089662] RELEASE: task 3, subtask 2, ts 19239004
+[19239.106905] RELEASE: task 3, subtask 0, ts 19239021
+[19239.107026] RELEASE: task 2, subtask 0, ts 19239021
+[19239.107029] RELEASE: task 1, subtask 0, ts 19239021
+[19239.935087] MISSED DDL: task 0, subtask 0
+[19239.935119] RELEASE: task 0, subtask 0, ts 19239850
+[19239.964327] RELEASE: task 3, subtask 1, ts 19239879
+[19240.107042] RELEASE: task 2, subtask 0, ts 19240021
+[19240.107044] RELEASE: task 1, subtask 0, ts 19240021
+[19240.935167] RELEASE: task 0, subtask 0, ts 19240850
+[19241.106929] RELEASE: task 3, subtask 0, ts 19241021
+[19241.107056] RELEASE: task 1, subtask 0, ts 19241021
+[19241.107064] RELEASE: task 2, subtask 0, ts 19241021
+[19241.654181] RELEASE: task 3, subtask 2, ts 19241569
+[19241.964349] RELEASE: task 3, subtask 1, ts 19241879
+[19242.058797] MISSED DDL: task 0, subtask 0
+[19242.107087] RELEASE: task 2, subtask 0, ts 19242022
+[19242.107090] RELEASE: task 1, subtask 0, ts 19242022
+[19242.112249] Unloaded module
+[19242.112317] RELEASE: task 0, subtask 0, ts 19242027
+[19242.683037] RELEASE: task 3, subtask 0, ts 19242597
+[19243.319664] RELEASE: task 3, subtask 1, ts 19243234
+[19243.654204] RELEASE: task 3, subtask 2, ts 19243569
+[19244.192263] RELEASE: task 4, subtask 0, ts 19244107
+[19245.931197] RELEASE: task 4, subtask 1, ts 19245846
+[19246.274124] RELEASE: task 4, subtask 2, ts 19246189

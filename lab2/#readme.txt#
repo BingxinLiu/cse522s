@@ -1,0 +1,36 @@
+MODULE DESIGN
+Data Structure
+
+In our replaceable header file, we defined two structures: task and subtask.
+
+The task structure including:
+
+    the period field denoting the period the task should be released,
+
+    the subtask_count field, which on behalf of the total number of subtasks within each task,
+
+    the task_start_idx field recording the first subtask's index in the array of subtasks,
+
+    and the exe_time field, which is the sum of the execution time of all its subtasks.
+
+The subtask structure is consisted of:
+
+    the task_id field, which records which task the subtask is belonging to,
+
+    the subtask_id field, the index for subtask,
+
+    the exe_time field, the time used by subtask in each release,
+
+    the timer field, which is used to wake up its successor,
+
+    the thread field, a pointer to the subtask thread's task_struct,
+
+    the last_realease_time field, which is recording when the subtask was released the last time,
+
+    the loop_count field, which is calculated via "calibrate" mode and specify how many times the subtask should loop,
+
+    the cumulative_exe_time field, recording the sum of each its precessors' execution time
+
+    the core field, calculated in "calibrate" mod and represent which core the subtask should run on,
+
+    and the priority field specified in "calibrate" mod, and denote the priority value of the subtask's thread.
